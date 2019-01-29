@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/numbersTv"
+        style="@style/StyleMyTV"
+        android:background="@color/colorGreen"
+        android:padding="20dp"
+        android:text="@string/words" />
+
+    <TextView
+        android:id="@+id/familyTv"
+        style="@style/StyleMyTV"
+        android:background="@color/colorRed"
+        android:padding="20dp"
+        android:text="@string/familyM" />
+
+    <TextView
+        android:id="@+id/colorsTv"
+        style="@style/StyleMyTV"
+        android:background="@color/colorOrange"
+        android:padding="20dp"
+        android:text="@string/colors" />
+
+    <TextView
+        android:id="@+id/phrasesTv"
+        style="@style/StyleMyTV"
+        android:background="@color/colorIndigo"
+        android:padding="20dp"
+        android:text="@string/phrases" />
+
+
+</LinearLayout>
