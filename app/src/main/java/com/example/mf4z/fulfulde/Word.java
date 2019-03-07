@@ -64,6 +64,17 @@ public class Word {
         this.mwordSound = mwordSound;
     }
 
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mdefLangTranslation='" + mdefLangTranslation + '\'' +
+                ", mfulfuldeTranslation='" + mfulfuldeTranslation + '\'' +
+                ", mimgId=" + mimgId +
+                ", mwordSound=" + mwordSound +
+                '}';
+    }
+
     //Method to check if image is available or not
     public boolean hasImage() {
         return mimgId != NO_IMAGE_PROVIDED;
