@@ -35,11 +35,11 @@ public class Word {
 
 
     //Word constructor that takes in 3 parameters. This is called contructor overloading
-    public Word(String fulN, String defN, int mimgIdN) {
+    public Word(String fulN, String defN, int mwordSoundN) {
 
         mfulfuldeTranslation = fulN;
         mdefLangTranslation = defN;
-        mimgId = mimgIdN;
+        mwordSound = mwordSoundN;
 
     }
 
@@ -62,10 +62,6 @@ public class Word {
 
     public int getMimgId() {
         return mimgId;
-    }
-
-    public void setMwordSound(int mwordSound) {
-        this.mwordSound = mwordSound;
     }
 
 
