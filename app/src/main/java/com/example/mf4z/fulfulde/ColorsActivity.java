@@ -22,7 +22,7 @@ public class ColorsActivity extends AppCompatActivity {
         colors.add(new Word("Bodejum","Red",R.drawable.color_red));
         colors.add(new Word("Haako Haako","Green",R.drawable.color_green));
         colors.add(new Word("Ndiyam Goro","Yellow",R.drawable.color_mustard_yellow));
-        colors.add(new Word("Gray","Purum  Purum",R.drawable.color_gray));
+        colors.add(new Word("Purum  Purum","Gray",R.drawable.color_gray));
 
 
         WordAdapter adapter = new WordAdapter(this,colors,R.color.colorOrange);

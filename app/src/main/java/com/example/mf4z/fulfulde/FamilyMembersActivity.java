@@ -19,7 +19,7 @@ public class FamilyMembersActivity extends AppCompatActivity {
         familyMembers.add(new Word("Daada","Mother",R.drawable.family_mother));
         familyMembers.add(new Word("Baaba","Father",R.drawable.family_father));
         familyMembers.add(new Word("Kaaka","Grand parent",R.drawable.family_grandmother));
-        familyMembers.add(new Word("Bandiko","Sibling",R.drawable.family_son));
+        familyMembers.add(new Word("Bandiko","Relative",R.drawable.family_son));
         familyMembers.add(new Word("Kaawu","Maternal Uncle",R.drawable.family_older_brother));
         familyMembers.add(new Word("Bappa","Paternal Uncle",R.drawable.family_older_brother));
         familyMembers.add(new Word("Yapendo","Maternal Aunt",R.drawable.family_older_sister));

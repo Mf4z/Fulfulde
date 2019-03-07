@@ -28,9 +28,9 @@ public class PhrasesActivity extends AppCompatActivity {
         phrases.add(new Word("Sai fajiri","Good night"));
         phrases.add(new Word("Jam Wala","Good night"));
         phrases.add(new Word("Noi inde ma?","What is your name?"));
-        phrases.add(new Word("Inde am _","My name is _"));
+        phrases.add(new Word("Inde am [inde]","My name is [name]"));
         phrases.add(new Word("Hatoi a yahata?","Where are you going?"));
-        phrases.add(new Word("Mi do yaha _","I am going _"));
+        phrases.add(new Word("Mi do yaha [babal]","I am going to [place]"));
 
 
 
