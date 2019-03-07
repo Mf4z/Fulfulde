@@ -18,6 +18,10 @@ public class Word {
     //Member variable, saves Image Value. Assigned to NO_IMAGE_PROVIDED
     private int mimgId = NO_IMAGE_PROVIDED;
 
+    public int getMwordSound() {
+        return mwordSound;
+    }
+
     private int mwordSound;
 
 
