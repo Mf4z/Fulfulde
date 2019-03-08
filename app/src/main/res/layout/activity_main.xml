@@ -7,33 +7,64 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/numbersTv"
-        style="@style/StyleMyTV"
-        android:background="@color/colorGreen"
-        android:padding="20dp"
-        android:text="@string/words" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorGreen">
 
-    <TextView
-        android:id="@+id/familyTv"
-        style="@style/StyleMyTV"
-        android:background="@color/colorRed"
-        android:padding="20dp"
-        android:text="@string/familyM" />
+        <TextView
+            android:id="@+id/numbersTv"
+            style="@style/StyleMyTV"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="20dp"
+            android:text="@string/words"
+            />
+    </FrameLayout>
 
-    <TextView
-        android:id="@+id/colorsTv"
-        style="@style/StyleMyTV"
-        android:background="@color/colorOrange"
-        android:padding="20dp"
-        android:text="@string/colors" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorRed">
 
-    <TextView
-        android:id="@+id/phrasesTv"
-        style="@style/StyleMyTV"
-        android:background="@color/colorIndigo"
-        android:padding="20dp"
-        android:text="@string/phrases" />
+        <TextView
+            android:id="@+id/familyTv"
+            style="@style/StyleMyTV"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="20dp"
+            android:text="@string/familyM" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorOrange">
+
+        <TextView
+            android:id="@+id/colorsTv"
+            style="@style/StyleMyTV"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="20dp"
+            android:text="@string/colors" />
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorIndigo">
+
+        <TextView
+            android:id="@+id/phrasesTv"
+            style="@style/StyleMyTV"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="20dp"
+            android:text="@string/phrases" />
+
+    </FrameLayout>
 
 
 </LinearLayout>
