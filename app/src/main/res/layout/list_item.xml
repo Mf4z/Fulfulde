@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:minHeight="@dimen/list_item_height"
-    android:orientation="horizontal"
-    >
+    android:layout_height="@dimen/list_item_height"
+    android:minHeight="@dimen/list_item_height">
 
 
     <ImageView
@@ -14,35 +12,48 @@
         android:layout_height="@dimen/list_item_height"
         android:background="@color/tan_background" />
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/text_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingLeft="16dp"
-        android:id="@+id/text_container">
+        android:layout_height="@dimen/list_item_height"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/image_iv"
+        android:paddingLeft="16dp">
 
         <TextView
             android:id="@+id/fulfulde_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
             android:layout_weight="1"
-            android:layout_marginTop="16dp"
             android:gravity="bottom"
             android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="@android:color/white"
             android:textStyle="bold"
+            android:textColor="@android:color/white"
             tools:text="Go'o" />
 
         <TextView
             android:id="@+id/default_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_below="@id/fulfulde_tv"
             android:layout_weight="1"
+            android:gravity="top"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white"
             tools:text="One" />
 
-    </LinearLayout>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/ic_play_arrow_black_24dp" />
+
+    </RelativeLayout>
 
 
-</LinearLayout>
+</RelativeLayout>
