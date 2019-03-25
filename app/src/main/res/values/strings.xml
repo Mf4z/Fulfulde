@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Fulfulde</string>
-    <string name="words">Numbers</string>
+    <string name="numbers">Numbers</string>
     <string name="familyM">Family Members</string>
     <string name="colors">Colors</string>
     <string name="phrases">Phrases</string>

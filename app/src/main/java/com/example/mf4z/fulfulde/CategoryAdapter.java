@@ -1,5 +1,6 @@
 package com.example.mf4z.fulfulde;
 
+import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -7,8 +8,15 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 public class CategoryAdapter extends FragmentPagerAdapter {
 
-    public CategoryAdapter(FragmentManager fm) {
+    /** Context of the app */
+    private Context mContext;
+
+    final int PAGE_COUNT = 4;
+
+    public CategoryAdapter(Context context,FragmentManager fm) {
         super(fm);
+        mContext = context;
+
     }
 
     @Override
@@ -24,8 +32,22 @@ public class CategoryAdapter extends FragmentPagerAdapter {
         }
     }
 
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        if (position == 0) {
+            return mContext.getString(R.string.numbers);
+        } else if (position == 1) {
+            return mContext.getString(R.string.familyM);
+        } else if (position == 2) {
+            return mContext.getString(R.string.colors);
+        } else {
+            return mContext.getString(R.string.phrases);
+        }
+    }
+
     @Override
     public int getCount() {
-        return 4;
+        return PAGE_COUNT;
     }
 }
