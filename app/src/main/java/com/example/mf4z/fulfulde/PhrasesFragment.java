@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -95,7 +94,7 @@ public class PhrasesFragment extends Fragment {
 
 
 
-        WordAdapter adapter = new WordAdapter(getActivity(),phrases,R.color.colorIndigo);
+        WordAdapter adapter = new WordAdapter(getActivity(),phrases,R.color.colorBrown);
 
         ListView listView = rootView.findViewById(R.id.list);
 
