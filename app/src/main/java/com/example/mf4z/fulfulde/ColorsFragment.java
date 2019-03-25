@@ -1,17 +1,24 @@
 package com.example.mf4z.fulfulde;
 
+
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class FamilyMembersActivity extends AppCompatActivity {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class ColorsFragment extends Fragment {
 
     //Declaring Media Player variable
     private MediaPlayer mMediaPlayer;
@@ -52,34 +59,35 @@ public class FamilyMembersActivity extends AppCompatActivity {
         }
     };
 
+    public ColorsFragment() {
+        // Required empty public constructor
+    }
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.word_list);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.word_list, container, false);
+
+        /** TODO: Insert all the code from the ColorsActivity’s onCreate() method after the setContentView method call */
 
         //Create and Setup
-        mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        mAudioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
 
-        final ArrayList<Word> familyMembers = new ArrayList<>();
-
-        familyMembers.add(new Word("Daada","Mother",R.drawable.family_mother,R.raw.family_mother));
-        familyMembers.add(new Word("Baaba","Father",R.drawable.family_father,R.raw.family_father));
-        familyMembers.add(new Word("Kaaka","Grand parent",R.drawable.family_grandmother,R.raw.family_grandparent));
-        familyMembers.add(new Word("Bandiko","Relative",R.drawable.family_son,R.raw.family_relative));
-        familyMembers.add(new Word("Kaawu","Maternal Uncle",R.drawable.family_older_brother,R.raw.family_maternaluncle));
-        familyMembers.add(new Word("Bappa","Paternal Uncle",R.drawable.family_older_brother,R.raw.family_paternaluncle));
-        familyMembers.add(new Word("Yapendo","Maternal Aunt",R.drawable.family_older_sister,R.raw.family_maternalaunt));
-        familyMembers.add(new Word("Goggo","Paternal Aunt",R.drawable.family_older_sister,R.raw.family_paternalaunt));
-        familyMembers.add(new Word("Adda","Elder Sister",R.drawable.family_older_sister,R.raw.family_eldersister));
-        familyMembers.add(new Word("Hamma","Elder Brother",R.drawable.family_older_brother,R.raw.family_elderbrother));
+        final ArrayList<Word> colors = new ArrayList<>();
 
 
+        colors.add(new Word("Balejum","Black",R.drawable.color_black,R.raw.color_black));
+        colors.add(new Word("Danejum","White",R.drawable.color_white,R.raw.color_white));
+        colors.add(new Word("Bodejum","Red",R.drawable.color_red,R.raw.color_red));
+        colors.add(new Word("Haako Haako","Green",R.drawable.color_green,R.raw.color_green));
+        colors.add(new Word("Ndiyam Goro","Yellow",R.drawable.color_mustard_yellow,R.raw.color_yellow));
+        colors.add(new Word("Purum  Purum","Gray",R.drawable.color_gray,R.raw.color_gray));
 
-        WordAdapter adapter = new WordAdapter(this,familyMembers,R.color.colorRed);
 
-        ListView listView = findViewById(R.id.list);
+        WordAdapter adapter = new WordAdapter(getActivity(),colors,R.color.colorOrange);
+
+        ListView listView = rootView.findViewById(R.id.list);
 
         listView.setAdapter(adapter);
 
@@ -92,7 +100,7 @@ public class FamilyMembersActivity extends AppCompatActivity {
                 releaseMediaPlayer();
 
                 // Get the {@link Word} object at the given position the user clicked on
-                Word word = familyMembers.get(position);
+                Word word = colors.get(position);
 
                 //Log.v("NumbersActivity", "Current word: " + word);
 
@@ -108,7 +116,7 @@ public class FamilyMembersActivity extends AppCompatActivity {
                     // We have audio focus now
 
                     //Creating a media player with a song
-                    mMediaPlayer = MediaPlayer.create(FamilyMembersActivity.this,word.getMwordSound());
+                    mMediaPlayer = MediaPlayer.create(getActivity(),word.getMwordSound());
                     //play sound
                     mMediaPlayer.start();
 
@@ -121,17 +129,16 @@ public class FamilyMembersActivity extends AppCompatActivity {
             }
         });
 
+
+        return rootView;
     }
 
     @Override
-    protected void onStop() {
+    public void onStop() {
         super.onStop();
         releaseMediaPlayer();
     }
 
-    /**
-     * Clean up the media player by releasing its resources.
-     */
     private void releaseMediaPlayer() {
         // If the media player is not null, then it may be currently playing a sound.
         if (mMediaPlayer != null) {
@@ -149,5 +156,4 @@ public class FamilyMembersActivity extends AppCompatActivity {
             mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListener);
         }
     }
-
 }

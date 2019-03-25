@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">Fulfulde</string>
-    <string name="words">Numbers</string>
-    <string name="familyM">Family Members</string>
+    <string name="numbers">Numbers</string>
+    <string name="familyM">Family</string>
     <string name="colors">Colors</string>
     <string name="phrases">Phrases</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

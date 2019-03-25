@@ -1,19 +1,23 @@
 package com.example.mf4z.fulfulde;
 
+
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.support.v4.app.NavUtils;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class NumbersActivity extends AppCompatActivity {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class PhrasesFragment extends Fragment {
 
     //Declaring Media Player variable
     private MediaPlayer mMediaPlayer;
@@ -55,46 +59,46 @@ public class NumbersActivity extends AppCompatActivity {
         }
     };
 
+    public PhrasesFragment() {
+        // Required empty public constructor
+    }
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.word_list, container, false);
 
-        //Set layout to layout with a listview
-        setContentView(R.layout.word_list);
-
-        //Set Up button in action bar
-
-
+        /** TODO: Insert all the code from the PhrasesActivity’s onCreate() method after the setContentView method call */
 
         //Create and Setup
-        mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        mAudioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
 
-        //Creating a list of words with an ArrayList of object Word
-        final ArrayList<Word> words = new ArrayList<>();
-
-        //using nameOfList.add() to add objects to the list
-        words.add(new Word("Go'o","One",R.drawable.number_one,R.raw.num1));
-        words.add(new Word("Didi","Two",R.drawable.number_two,R.raw.num2));
-        words.add(new Word("Tati","Three",R.drawable.number_three,R.raw.num3));
-        words.add(new Word("Nai","Four",R.drawable.number_four,R.raw.num4));
-        words.add(new Word("Jui","Five",R.drawable.number_five,R.raw.num5));
-        words.add(new Word("Jego","Six",R.drawable.number_six,R.raw.num6));
-        words.add(new Word("Jedidi","Seven",R.drawable.number_seven,R.raw.num7));
-        words.add(new Word("Jetati","Eight",R.drawable.number_eight,R.raw.num8));
-        words.add(new Word("Jenai","Nine",R.drawable.number_nine,R.raw.num9));
-        words.add(new Word("Sappo","Ten",R.drawable.number_ten,R.raw.num10));
+        final ArrayList<Word> phrases = new ArrayList<>();
 
 
-        //Instantiating a new object of WordAdapter adepter,takes in thr context,object list,theme color
-        WordAdapter adapter = new WordAdapter(this,words,R.color.colorGreen);
+        phrases.add(new Word("Jam bandu na?","Good morning",R.raw.phrase_gmorning));
+        phrases.add(new Word("Noi chomri?","How are you?",R.raw.phrase_greetinghowareyou));
+        phrases.add(new Word("Noi sare?","How is home?",R.raw.phrase_howishome));
+        phrases.add(new Word("Noi iyalu ma?","How is your family?",R.raw.phrase_howisthefamily));
+        phrases.add(new Word("Jam Alhamdulillah","Good Alhamdulillah",R.raw.phrase_goodwthnks));
+        phrases.add(new Word("Mi hofni ma","I greet you",R.raw.phrase_igreetyou));
+        phrases.add(new Word("Sai yeso","See you later",R.raw.phrase_later));
+        phrases.add(new Word("Sai jango","Till tomorrow",R.raw.phrase_tilltomorrow));
+        phrases.add(new Word("Sai fajiri","Good night",R.raw.phrase_gnight));
+        phrases.add(new Word("Jam Wala","Sleep well",R.raw.phrase_gnight2));
+        phrases.add(new Word("Noi inde ma?","What is your name?",R.raw.phrase_whatsyourname));
+        phrases.add(new Word("Inde am [inde]","My name is [name]",R.raw.phrase_mynameis));
+        phrases.add(new Word("Hatoi a yahata?","Where are you going?",R.raw.phrase_whereyougoing));
+        phrases.add(new Word("Mi do yaha [babal]","I am going to [place]",R.raw.phrase_imgoing));
 
-        //Declaring and initialising the list view
-        ListView listView = findViewById(R.id.list);
 
 
-        //Setting the adapter to the listview
+        WordAdapter adapter = new WordAdapter(getActivity(),phrases,R.color.colorBrown);
+
+        ListView listView = rootView.findViewById(R.id.list);
+
         listView.setAdapter(adapter);
-
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -105,7 +109,7 @@ public class NumbersActivity extends AppCompatActivity {
                 releaseMediaPlayer();
 
                 // Get the {@link Word} object at the given position the user clicked on
-                Word word = words.get(position);
+                Word word = phrases.get(position);
 
                 //Log.v("NumbersActivity", "Current word: " + word);
 
@@ -121,7 +125,7 @@ public class NumbersActivity extends AppCompatActivity {
                     // We have audio focus now
 
                     //Creating a media player with a song
-                    mMediaPlayer = MediaPlayer.create(NumbersActivity.this,word.getMwordSound());
+                    mMediaPlayer = MediaPlayer.create(getActivity(),word.getMwordSound());
                     //play sound
                     mMediaPlayer.start();
 
@@ -134,11 +138,11 @@ public class NumbersActivity extends AppCompatActivity {
             }
         });
 
+        return rootView;
     }
 
-
     @Override
-    protected void onStop() {
+    public void onStop() {
         super.onStop();
         releaseMediaPlayer();
     }
@@ -162,16 +166,5 @@ public class NumbersActivity extends AppCompatActivity {
             // unregisters the AudioFocusChangeListener so we don't get anymore callbacks.
             mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListener);
         }
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            // Respond to the action bar's Up/Home button
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 }
