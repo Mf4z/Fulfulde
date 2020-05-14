@@ -18,14 +18,11 @@ public class Word {
     //Member variable, saves Image Value. Assigned to NO_IMAGE_PROVIDED
     private int mimgId = NO_IMAGE_PROVIDED;
 
-    public int getMwordSound() {
-        return mwordSound;
-    }
-
     private int mwordSound;
 
 
     //Word constructor that takes in 2 parameters
+
     public Word(String fulN, String defN) {
 
         mfulfuldeTranslation = fulN;
@@ -33,8 +30,8 @@ public class Word {
 
     }
 
-
     //Word constructor that takes in 3 parameters. This is called contructor overloading
+
     public Word(String fulN, String defN, int mwordSoundN) {
 
         mfulfuldeTranslation = fulN;
@@ -42,7 +39,6 @@ public class Word {
         mwordSound = mwordSoundN;
 
     }
-
     public Word(String mfulfuldeTranslation, String mdefLangTranslation, int mimgId, int mwordSound) {
         this.mfulfuldeTranslation = mfulfuldeTranslation;
         this.mdefLangTranslation = mdefLangTranslation;
@@ -50,8 +46,8 @@ public class Word {
         this.mwordSound = mwordSound;
     }
 
-    //Getters,used to get values of instance variables of the class
 
+    //Getters,used to get values of instance variables of the class
     public String getFulfuldeTranslation() {
         return mfulfuldeTranslation;
     }
@@ -62,6 +58,10 @@ public class Word {
 
     public int getMimgId() {
         return mimgId;
+    }
+
+    public int getMwordSound() {
+        return mwordSound;
     }
 
 

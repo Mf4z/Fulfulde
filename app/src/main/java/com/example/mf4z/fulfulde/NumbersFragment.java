@@ -23,7 +23,7 @@ public class NumbersFragment extends Fragment {
     //Declaring Media Player variable
     private MediaPlayer mMediaPlayer;
 
-    //Delaring Audio Manager for use in the entire class
+    //Declaring Audio Manager for use in the entire class
     private AudioManager mAudioManager;
 
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
