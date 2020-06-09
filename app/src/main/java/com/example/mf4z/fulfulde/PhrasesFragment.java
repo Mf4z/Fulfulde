@@ -87,10 +87,10 @@ public class PhrasesFragment extends Fragment {
         phrases.add(new Word("Sai jango","Till tomorrow",R.raw.phrase_tilltomorrow));
         phrases.add(new Word("Sai fajiri","Good night",R.raw.phrase_gnight));
         phrases.add(new Word("Jam Wala","Sleep well",R.raw.phrase_gnight2));
-        phrases.add(new Word("Noi inde ma?","What is your name?",R.raw.phrase_whatsyourname));
+        phrases.add(new Word("Noi inde ma?","What is your name?",R.raw.phrase_whatisyourname));
         phrases.add(new Word("Inde am [inde]","My name is [name]",R.raw.phrase_mynameis));
         phrases.add(new Word("Hatoi a yahata?","Where are you going?",R.raw.phrase_whereyougoing));
-        phrases.add(new Word("Mi do yaha [babal]","I am going to [place]",R.raw.phrase_imgoing));
+        phrases.add(new Word("Mi do yaha [babal]","I am going to [place]",R.raw.phrase_iamgoingto));
 
 
 
