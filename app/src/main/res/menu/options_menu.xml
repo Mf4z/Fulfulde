@@ -4,5 +4,6 @@
 
     <item
         android:id="@+id/item_about"
-        android:title="About" />
+        android:title="About"
+        app:showAsAction="ifRoom" />
 </menu>
