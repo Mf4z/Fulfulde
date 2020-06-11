@@ -72,7 +72,7 @@ public class AboutActivity extends AppCompatActivity {
     public void sendMail(View view){
 
         Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("text/plain");
+        intent.setType("message/rfc2822");
         intent.putExtra(Intent.EXTRA_EMAIL, "emef4z@gmail.com");
         intent.putExtra(Intent.EXTRA_SUBJECT, "I love your Fulfulde App");
         intent.putExtra(Intent.EXTRA_TEXT, "Hello Marwan,");
