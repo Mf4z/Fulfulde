@@ -1,6 +1,7 @@
 package com.example.mf4z.fulfulde;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -60,9 +61,26 @@ public class MainActivity extends AppCompatActivity {
             case R.id.item_about:
                 showAbout();
                 return true;
+            case R.id.item_feedback:
+                showFeedback();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void showFeedback() {
+
+
+        Intent email = new Intent(Intent.ACTION_SEND);
+        email.putExtra(Intent.EXTRA_EMAIL, new String[]{ "emef4z@gmail.com"});
+        email.putExtra(Intent.EXTRA_SUBJECT, "Suggestion/Feedback on Fulfulde App");
+        email.putExtra(Intent.EXTRA_TEXT, "Hello Marwan,");
+
+        //need this to prompts email client only
+        email.setType("message/rfc822");
+
+        startActivity(Intent.createChooser(email, "Send feedback"));
     }
 
     private void showAbout() {

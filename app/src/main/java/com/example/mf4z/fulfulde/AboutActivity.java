@@ -71,13 +71,16 @@ public class AboutActivity extends AppCompatActivity {
 
     public void sendMail(View view){
 
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("message/rfc2822");
-        intent.putExtra(Intent.EXTRA_EMAIL, "emef4z@gmail.com");
-        intent.putExtra(Intent.EXTRA_SUBJECT, "I love your Fulfulde App");
-        intent.putExtra(Intent.EXTRA_TEXT, "Hello Marwan,");
 
-        startActivity(Intent.createChooser(intent, "Send Email"));
+        Intent email = new Intent(Intent.ACTION_SEND);
+        email.putExtra(Intent.EXTRA_EMAIL, new String[]{ "emef4z@gmail.com"});
+        email.putExtra(Intent.EXTRA_SUBJECT, "I love your Fulfulde App");
+        email.putExtra(Intent.EXTRA_TEXT, "Hello Marwan,");
+
+        //need this to prompts email client only
+        email.setType("message/rfc822");
+
+        startActivity(Intent.createChooser(email, "Send email"));
     }
 
 

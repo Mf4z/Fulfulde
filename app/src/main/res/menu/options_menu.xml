@@ -6,4 +6,8 @@
         android:id="@+id/item_about"
         android:title="About"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/item_feedback"
+        android:title="Feedback"
+        app:showAsAction="ifRoom" />
 </menu>
