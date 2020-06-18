@@ -80,10 +80,10 @@ public class ColorsFragment extends Fragment {
         colors.add(new Word("Balejum","Black",R.drawable.color_black,R.raw.color_black));
         colors.add(new Word("Danejum","White",R.drawable.color_white,R.raw.color_white));
         colors.add(new Word("Bodejum","Red",R.drawable.color_red,R.raw.color_red));
-        //colors.add(new Word("Korejum","Blue",R.drawable.color_blue,R.raw.color_blue));
+        colors.add(new Word("Korejum","Blue",R.drawable.color_blue,R.raw.color_blue));
         colors.add(new Word("Haako Haako","Green",R.drawable.color_green,R.raw.color_green));
-       // colors.add(new Word("Ndiyam Goro","Yellow",R.drawable.color_mustard_yellow,R.raw.color_yellow));
-        // colors.add(new Word("Purum","Brown",R.drawable.color_brown,R.raw.color_brown));
+        colors.add(new Word("Oolum","Yellow",R.drawable.color_mustard_yellow,R.raw.color_yellow));
+         colors.add(new Word("Purum","Brown",R.drawable.color_brown,R.raw.color_brown));
        // colors.add(new Word("Purum  Purum","Gray",R.drawable.color_gray,R.raw.color_gray));
 
 
