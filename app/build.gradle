@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.example.mf4z.fulfulde"
+        applicationId "com.mf4z.fulfulde"
         minSdkVersion 15
         targetSdkVersion 27
         versionCode 1

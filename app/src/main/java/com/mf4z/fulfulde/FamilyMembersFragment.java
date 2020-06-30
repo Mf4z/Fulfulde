@@ -1,4 +1,4 @@
-package com.example.mf4z.fulfulde;
+package com.mf4z.fulfulde;
 
 
 import android.content.Context;
@@ -11,19 +11,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * create an instance of this fragment.
  */
-public class NumbersFragment extends Fragment {
+public class FamilyMembersFragment extends Fragment {
+
     //Declaring Media Player variable
     private MediaPlayer mMediaPlayer;
 
-    //Declaring Audio Manager for use in the entire class
+    //Delaring Audio Manager for use in the entire class
     private AudioManager mAudioManager;
 
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
@@ -33,7 +32,6 @@ public class NumbersFragment extends Fragment {
             releaseMediaPlayer();
         }
     };
-
 
     private AudioManager.OnAudioFocusChangeListener mOnAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
         @Override
@@ -60,8 +58,7 @@ public class NumbersFragment extends Fragment {
         }
     };
 
-
-    public NumbersFragment() {
+    public FamilyMembersFragment() {
         // Required empty public constructor
     }
 
@@ -72,37 +69,32 @@ public class NumbersFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.word_list, container, false);
 
-        /** TODO: Insert all the code from the NumberActivity’s onCreate() method after the setContentView method call */
+        /** TODO: Insert all the code from the FamilyMembersActivity’s onCreate() method after the setContentView method call */
 
         //Create and Setup
         mAudioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
 
-        //Creating a list of words with an ArrayList of object Word
-        final ArrayList<Word> words = new ArrayList<>();
+        final ArrayList<Word> familyMembers = new ArrayList<>();
 
-        //using nameOfList.add() to add objects to the list
-        words.add(new Word("Go'o","One",R.drawable.number_one,R.raw.num1));
-        words.add(new Word("Didi","Two",R.drawable.number_two,R.raw.num2));
-        words.add(new Word("Tati","Three",R.drawable.number_three,R.raw.num3));
-        words.add(new Word("Nai","Four",R.drawable.number_four,R.raw.num4));
-        words.add(new Word("Jui","Five",R.drawable.number_five,R.raw.num5));
-        words.add(new Word("Jego","Six",R.drawable.number_six,R.raw.num6));
-        words.add(new Word("Jedidi","Seven",R.drawable.number_seven,R.raw.num7));
-        words.add(new Word("Jetati","Eight",R.drawable.number_eight,R.raw.num8));
-        words.add(new Word("Jenai","Nine",R.drawable.number_nine,R.raw.num9));
-        words.add(new Word("Sappo","Ten",R.drawable.number_ten,R.raw.num10));
+        familyMembers.add(new Word("Daada","Mother",R.drawable.family_mother,R.raw.family_mother));
+        familyMembers.add(new Word("Baaba","Father",R.drawable.family_father,R.raw.family_father));
+        familyMembers.add(new Word("Kaaka","Grand parent",R.drawable.family_grandfather,R.raw.family_grandparent));
+        familyMembers.add(new Word("Maama","Grand Mother",R.drawable.family_grandmother,R.raw.family_grandma));
+        familyMembers.add(new Word("Bandiko","Relative",R.drawable.family_son,R.raw.family_relative));
+        familyMembers.add(new Word("Kaawu","Maternal Uncle",R.drawable.family_older_brother,R.raw.family_maternaluncle));
+        familyMembers.add(new Word("Bappa","Paternal Uncle",R.drawable.family_older_brother,R.raw.family_paternaluncle));
+        familyMembers.add(new Word("Yapendo","Maternal Aunt",R.drawable.family_older_sister,R.raw.family_maternalaunt));
+        familyMembers.add(new Word("Goggo","Paternal Aunt",R.drawable.family_older_sister,R.raw.family_paternalaunt));
+        familyMembers.add(new Word("Adda","Elder Sister",R.drawable.family_older_sister,R.raw.family_eldersister));
+        familyMembers.add(new Word("Hamma","Elder Brother",R.drawable.family_older_brother,R.raw.family_elderbrother));
 
 
-        //Instantiating a new object of WordAdapter adepter,takes in thr context,object list,theme color
-        WordAdapter adapter = new WordAdapter(getActivity(),words,R.color.colorGreen);
 
-        //Declaring and initialising the list view
+        WordAdapter adapter = new WordAdapter(getActivity(),familyMembers,R.color.colorRed);
+
         ListView listView = rootView.findViewById(R.id.list);
 
-
-        //Setting the adapter to the listview
         listView.setAdapter(adapter);
-
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -113,7 +105,7 @@ public class NumbersFragment extends Fragment {
                 releaseMediaPlayer();
 
                 // Get the {@link Word} object at the given position the user clicked on
-                Word word = words.get(position);
+                Word word = familyMembers.get(position);
 
                 //Log.v("NumbersActivity", "Current word: " + word);
 
@@ -148,11 +140,12 @@ public class NumbersFragment extends Fragment {
     @Override
     public void onStop() {
         super.onStop();
-        // When the activity is stopped, release the media player resources because we won't
-        // be playing any more sounds.
         releaseMediaPlayer();
     }
 
+    /**
+     * Clean up the media player by releasing its resources.
+     */
     private void releaseMediaPlayer() {
         // If the media player is not null, then it may be currently playing a sound.
         if (mMediaPlayer != null) {

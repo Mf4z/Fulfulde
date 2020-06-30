@@ -1,4 +1,4 @@
-package com.example.mf4z.fulfulde;
+package com.mf4z.fulfulde;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;

@@ -1,4 +1,4 @@
-package com.example.mf4z.fulfulde;
+package com.mf4z.fulfulde;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.mf4z.fulfulde", appContext.getPackageName());
+        assertEquals("com.mf4z.fulfulde", appContext.getPackageName());
     }
 }

@@ -1,4 +1,4 @@
-package com.example.mf4z.fulfulde;
+package com.mf4z.fulfulde;
 
 /**
  * Created by mf4z on 9/8/18.

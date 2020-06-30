@@ -1,4 +1,4 @@
-package com.example.mf4z.fulfulde;
+package com.mf4z.fulfulde;
 
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -7,7 +7,6 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 public class AboutActivity extends AppCompatActivity {
 
