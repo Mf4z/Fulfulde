@@ -84,6 +84,14 @@ public class AboutActivity extends AppCompatActivity {
     }
 
 
+    public void gotoWebsite(View view){
+
+        String url = "https://mf4z.com/";
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse(url));
+        startActivity(i);
+    }
+
 
 
 
